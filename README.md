@@ -48,7 +48,7 @@ be found in `node.hpp`
 
 In short, the following files are the only ones that you should modify for this
 assignment:
-* `dll.hpp`
+* `pq.hpp`
 
 No other file should be modified!
 
