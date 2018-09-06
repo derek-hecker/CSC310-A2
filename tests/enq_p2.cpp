@@ -17,7 +17,7 @@ int main()
         x = pq.get_front(); 
         if(x != i)
         {
-            cout << "[-->] Expected "<< i-1 <<" but got " << x << endl;
+            cout << "[-->] Expected "<< i <<" but got " << x << endl;
             cout << "[-->] Test failed\n";
             exit(points);
         }
