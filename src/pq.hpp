@@ -54,12 +54,58 @@ template<class T>
 void PQ<T>::enqueue(T &data, int priority)
 {
     Node<T> *new_node = new Node<T>(data, priority);
+    if (head == NULL){
+        head = new_node;
+        tail = new_node; 
+    } else {
+        new_node->set_next(head);
+        head = new_node;
+    }
 
 }
 
 template<class T>
 void PQ<T>::dequeue(void)
 {
+    if (head == NULL){
+        return 0;
+    }
+    Node<T> *tmp = head;
+    Node<T> *target = NULL;
+    tmp_prio = tmp->get_prio; 
+    while (while tmp != NULL)
+    {
+        tmp = tmp->get_next;
+            if (tmp->get_prio < tmp_prio){
+                target = tmp;
+            } else {
+                target = head;
+            }
+    }
+    if (target == head){
+        tmp = head;
+        head = head->get_next;
+        delete(tmp);
+        delete(target)
+        return 0;
+    } else if ( target == tail){
+        tmp = head;
+        while (tmp->get_next != tail){
+            tmp = tmp->get_next;
+        }
+        tail = tmp;
+        delete(tmp);
+        delete(target);
+        return 0;
+    } else (
+        tmp = head; 
+        while (tmp->get_next != target){
+            tmp = tmp->get_next;
+        }
+        tmp->set_next = target->get_next;
+        
+    )
+
 }
 
 template<class T>
