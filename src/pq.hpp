@@ -97,18 +97,20 @@ void PQ<T>::dequeue(void)
     Node<T> *toDestroy = head;
     if (head == NULL)
     {
+        delete(toDestroy);
         return;
-    } else if (head->get_next() == NULL){
+    }
+    else if (head->get_next() == NULL)
+    {
         head = NULL;
         tail = NULL;
-        delete(toDestroy);
-    } else
+        delete (toDestroy);
+    }
+    else
     {
         head = head->get_next();
-        delete(toDestroy);
+        delete (toDestroy);
     }
-    
-    
 }
 
 template <class T>
@@ -116,7 +118,7 @@ T PQ<T>::get_front()
 {
     if (head == NULL)
     {
-        return 1;
+        return 0;
     }
     return head->get_data();
 }
@@ -168,5 +170,6 @@ int PQ<T>::get_count(void)
             tmp = tmp->get_next();
         }
     }
+    delete(tmp);
     return count;
 }
