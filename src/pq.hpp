@@ -118,7 +118,7 @@ T PQ<T>::get_front()
 {
     if (head == NULL)
     {
-        return 0;
+        return -1;
     }
     return head->get_data();
 }
